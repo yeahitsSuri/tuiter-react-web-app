@@ -16,8 +16,14 @@
         height="48px", width="48px"/>
     <br/>
 
+    <style>
+        #textarea textarea::placeholder {
+            color: grey;
+        }
+    </style>
+    
     <form id="textarea">
-        <textarea cols="20" rows="2">What's happening?</textarea>
+        <textarea cols="20" rows="2" placeholder="What's happening?"></textarea>
     </form>
 
     <select id="select-reply-type">
