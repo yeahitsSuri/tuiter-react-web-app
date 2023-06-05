@@ -1,1 +1,2 @@
-# HW2 - Tianshu Yang CSS and Bootstrap
+# HW2 - Tianshu Yang 
+# CSS and Bootstrap
