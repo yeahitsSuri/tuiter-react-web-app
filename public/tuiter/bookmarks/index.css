@@ -1,0 +1,153 @@
+.wd-header-container {
+    background-color: white;
+    height: 10%;
+    width: 90%;
+    margin-top: -10px;
+}
+
+.fas.fa-arrow-left {
+    font-size: 18px;
+    color: black;
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    font-size: bold;
+}
+
+.wd-header-title {
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 80px;
+}
+
+.fas.fa-ellipsis {
+    font-size: 18px;
+    color: black;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: bold;
+}
+
+.wd-tuit-user-container {
+    position: relative;
+    width: 100%;
+    padding-left: 10px;
+    
+}
+
+.wd-avatar-zone {
+    float: left;
+    width: 60px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.wd-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+}
+
+.wd-tuit-user {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 0px;
+}
+
+.wd-tuit-first-user{
+    margin-top: 75px;
+    margin-left: 0px;
+}
+
+.fas.fa-check-circle {
+    font-size: 18px;
+    color: blue;
+}
+
+.wd-tuit-user-info {
+    font-size: 14px;
+    color: gray;
+    font-weight: 300;
+}
+
+.wd-tuit {
+    font-size: 14px;
+}
+
+.wd-move-ellipsis {
+    padding-top: 60px;
+    padding-right: 0px;
+}
+
+.wd-tuit-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin-left: 80px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.wd-tuit-border {
+    border: solid;
+    border-color: lightgray;
+}
+
+.wd-tuit-image {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    object-fit: cover;
+}
+
+.wd-pic-comment-small {
+    font-size: 14px;
+    color: gray;
+    margin-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.wd-underline{
+    text-decoration: underline;
+}
+
+.wd-pic-comment-normal {
+    font-size: 14px;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.wd-icons-container {
+    height: 70px;
+    position:relative;
+    margin-left: 80px;
+    width: 80%;
+    padding: 0;
+    padding-top: 10px;
+}
+
+.wd-float {
+    float: left;
+    width: 15%;
+}
+
+.wd-padding {
+    padding-left: 5px
+
+}
+
+.wd-move-up {
+    padding-bottom: 20px;
+}
+
+.wd-pink {
+    color:palevioletred
+}
+

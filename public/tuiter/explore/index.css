@@ -1,0 +1,274 @@
+
+.wd-search-container {
+    position: relative;
+    height: 20%;
+    width: 95%;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.wd-search-input {
+    border-radius: 20px;
+    width: 90%;
+    background-color: #EAEAEA;
+    height: 40px;
+    padding-left: 80px;
+    left: 50px;
+    border: none;
+}
+
+.wd-font-18 {
+    font-size: 18px;
+    color: grey;
+}
+
+.fas.fa-search {
+    font-size: 18px;
+    color: grey;
+    position: absolute;
+    padding-left: 22px;
+    margin: 10px 10px 10px 10px;
+}
+
+.fas.fa-cog {
+    font-size: 20px;
+    color: grey;
+    position: absolute;
+}
+
+
+.wd-search-padding {
+    padding-left: 10px;
+}
+
+.wd-tab-container {
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    position: relative;
+}
+  
+.wd-tabs {
+    font-weight: bold;
+    color: lightgray;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+.wd-tab {
+    text-align: center;
+    position: relative;
+    color: rgb(72, 72, 72);
+    float: left;
+    width: 20%;
+    padding-top: 10px;
+}
+
+.wd-activeTab {
+    display: inline-block;
+    position: relative;
+}
+
+.wd-activeTab::after {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: rgb(0, 166, 255);
+    height: 3px;
+    content: "";
+}
+
+.wd-chosenTab {
+    text-decoration: underline;
+    text-align: center;
+    position: relative;
+    color: darkgray;
+    float: left;
+    width: 20%;
+    font-weight: bolder;
+    padding-top: 10px;
+
+}
+
+.wd-pic-container {
+    height: 350px;
+    width: 100%;
+    padding-top: 20px;
+    position: relative;
+}
+
+.wd-picture {
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    position: absolute;
+    object-fit: cover;
+}
+
+.wd-floatEvent {
+    position: absolute;
+    color: white;
+    left: 15px;
+    bottom: 10%;
+
+}
+
+.wd-floatLive {
+    position: absolute;
+    color: white;
+    background-color: orangered;
+    border-radius: 3px;
+    left: 65px;
+    bottom: 10%;
+}
+
+.wd-pic-news {
+    position: absolute;
+    color: white;
+    bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    left: 15px;
+}
+
+.wd-trendings-container {
+    width: 95%;
+    margin-top:30px;
+    padding-top: 15px;
+    position: relative;
+}
+
+.wd-trendings-group {
+    width: 100%;
+    position: relative;
+    left: -15px;
+}
+
+.wd-single-trending {
+    height: 15%;
+    width: 100%;
+    padding-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.wd-trending-title {
+    font-size: 14px;
+    color: gray;
+    position: relative;
+}
+
+.wd-trending-keywords {
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+.fas.fa-circle {
+    padding-top: 20px;
+    font-size: 22px;
+}
+
+.wd-round-corner {
+    border-radius: 4px;
+}
+
+.wd-main {
+    display: flex;
+    justify-items: center;
+}
+
+.wd-main-contents {
+    display: inline;
+    padding: 0;
+    margin:0;
+    height:45px;
+    list-style-type:none;
+}
+
+.wd-align-items {
+    display: flex;
+    align-items: center;
+}
+
+.rounded-pill {
+    width: 90%;
+    max-width: 500px;
+}
+
+@media (min-width: 576px) {
+    .rounded-pill {
+      max-width: 500px; 
+  }
+}
+  
+@media (min-width: 768px) {
+    .rounded-pill {
+      max-width: 600px; 
+    }
+}
+
+.nav-item {
+    margin-right:15px;
+}
+
+.wd-fa-cog-align {
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.wd-pic-title {
+    margin-top: -50px;
+    padding-left: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.wd-tuit-img {
+    width: 20%;
+    float: right;
+    padding-left: 5px;
+}
+
+.wd-tuit-title {
+    font-size: 14px;
+    color : gray;
+}
+
+.wd-user-info {
+    font-weight: bold;
+}
+
+.wd-tuit-post {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.wd-padding-btm {
+    padding-bottom: 10px;
+}
+
+.wd-profile-pic {
+    float: left;
+    width: 30%;
+    border-radius: 50%;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.wd-tuit-button {
+    float: right;
+}
+
+.wd-space-between {
+    justify-content: space-between;
+}
+
+.wd-profile {
+    cursor: pointer;
+    text-decoration: none;
+}
