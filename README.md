@@ -1,2 +1,2 @@
-# HW2 - Tianshu Yang 
-# CSS and Bootstrap
+# HW4 - Tianshu Yang 
+# STATE + REDUX
