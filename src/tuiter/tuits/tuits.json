@@ -30,7 +30,7 @@
 ,
  { 
   "_id": 345, 
-  "topic": "Energy",  
+  "topic": "Energy", 
   "userName": "Tesla",
   "title": "Tesla open to sustainable energy",
   "time": "4d",   
@@ -38,7 +38,7 @@
   "liked": true,
   "replies": 111,
   "retuits": 1111,
-  "likes": "11.1k",
+  "likes": 1234,
   "handle": "@tesla",
   "tuit": "To accelerate the transition to sustainable energy, we look forward to more EVs adopting the North American Charging Standard & using the Supercharger network"
  }
