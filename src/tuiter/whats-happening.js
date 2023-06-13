@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {createTuit} from "./reducers/tuits-reducer";
+import {createTuitThunk} from "./services/tuits-thunks";
 import {useDispatch} from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faImage, faListUl, faSmile, faCalendarAlt, faMapMarkerAlt, faBold, faItalic } from '@fortawesome/free-solid-svg-icons';
@@ -12,9 +12,7 @@ const WhatsHappening = () => {
     const newTuit = {
         tuit: whatsHappening
     }
-    dispatch(createTuit(newTuit));
-    setWhatsHappening("");   
-   console.log(whatsHappening);
+    dispatch(createTuitThunk(newTuit));
  }
  return (
    <div className="row">

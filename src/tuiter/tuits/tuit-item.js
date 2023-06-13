@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTuit } from "../reducers/tuits-reducer";
+import {deleteTuitThunk} from "../services/tuits-thunks";
 import TuitStats from "./tuits-stats";
 import "./style.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { useLocation } from "react-router";
 
 const TuitItem = ({
   tuit = {
@@ -22,8 +23,13 @@ const TuitItem = ({
   }
 }) => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  const baseUrl = window.location.origin;
+  const imageUrl = `${baseUrl}/images/${tuit.image}`;
+
+
   const deleteTuitHandler = (id) => {
-    dispatch(deleteTuit(id));
+    dispatch(deleteTuitThunk(id));
   };
 
   return (
@@ -33,7 +39,7 @@ const TuitItem = ({
           <img
             width={70}
             className="float-end rounded-3"
-            src={`./images/${tuit.image}`}
+            src={imageUrl}
           />
         </div>
         <div className="col-10">

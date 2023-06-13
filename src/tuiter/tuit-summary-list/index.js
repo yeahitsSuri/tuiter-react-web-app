@@ -1,9 +1,7 @@
 import React from "react";
 // import tuitsArray from './tuits.json';
 import {useSelector} from "react-redux";
-
-import TuitSummaryItem
-  from "./tuit-summary-item";
+import TuitSummaryItem from "./tuit-summary-item";
 
 const TuitSummaryList = () => {
   const { tuits } = useSelector(state => state.tuits)

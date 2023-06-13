@@ -1,59 +1,34 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavigationSidebar = () => {
+  const { currentUser } = useSelector((state) => state.user);
   const { pathname } = useLocation();
-  const [ active] = pathname.split("/");
+  const [, tuiter, active] = pathname.split("/"); 
+
+  const links = ["home", "explore", "notifications", "messages", "bookmarks", "lists", "profile", "more"];
+  const icons = ["fas fa-home", "fas fa-hashtag", "fas fa-bell", "fas fa-envelope", "fas fa-bookmark", "fas fa-list", "fas fa-user", "fas fa-ellipsis-h"];
 
   return (
+    // make tuiter/home active as default page- tianshu
     <div className="list-group">
-      <Link to="../navigation.html" className="list-group-item list-group-item-action">
-        <i className="fab fa-twitter"></i>
+      <Link to="/tuiter/home" className={`list-group-item text-capitalize ${active === "home" ? "active" : ""}`}>
+        <i className={icons[0]}></i> <span className="d-none d-xxl-inline">home</span>
       </Link>
-
-      <Link to="/home" className="list-group-item list-group-item-action active">
-        <i className="fa fa-home"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "white"}}>Home</span>
-      </Link>
-
-      <Link to="/explore" className={`list-group-item list-group-item-action ${active === "explore" ? "active" : ""}`}>
-        <i className="fa fa-hashtag"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>Explore</span>
-      </Link>
-
-      <Link to="../notifications.html" className="list-group-item list-group-item-action">
-        <i className="fa fa-bell"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>Notifications</span>
-      </Link>
-
-      <Link to="../messages.html" className="list-group-item list-group-item-action">
-        <i className="fa fa-message"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>Messages</span>
-      </Link>
-
-      <Link to="../bookmarks/bookmarks-css.html" className="list-group-item list-group-item-action">
-        <i className="fa fa-bookmark"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>Bookmarks</span>
-      </Link>
-
-      <Link to="../lists.html" className="list-group-item list-group-item-action">
-        <i className="fa fa-list"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>Lists</span>
-      </Link>
-
-      <Link to="../profile.html" className="list-group-item list-group-item-action">
-        <i className="fa fa-user"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>Profile</span>
-      </Link>
-
-      <Link to="../more.html" className="list-group-item list-group-item-action">
-        <i className="fa fa-ellipsis"></i>
-        <span className="d-none d-xxl-inline d-xl-inline" style={{ paddingLeft: "10px", color: "gray"}}>More</span>
-      </Link>
-
-      <button className="btn btn-primary rounded-pill mt-4 wd-round-corner" action="../tuit.html">
-        Tuit
-      </button>
+      {links.slice(1).map((link, index) => (
+        <Link
+          key={link}
+          to={`/tuiter/${link}`}
+          className={`list-group-item text-capitalize ${active === link ? "active" : ""}`}
+        >
+          <i className={icons[index + 1]}></i> <span className="d-none d-xxl-inline">{link}</span>
+        </Link>
+      ))}
+      {!currentUser && <Link className="list-group" to="/tuiter/login">Login</Link>}
+      {!currentUser && <Link className="list-group" to="/tuiter/register">Register</Link>}
+      {currentUser && <Link className="list-group" to="/tuiter/profile">Profile</Link>}
+      <button className="btn btn-primary mt-2 p-2 rounded-pill">Tuit</button>
     </div>
   );
 };
