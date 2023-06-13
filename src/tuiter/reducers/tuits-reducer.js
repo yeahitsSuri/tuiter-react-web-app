@@ -27,7 +27,7 @@ const tuitsSlice = createSlice({
     [deleteTuitThunk.fulfilled] :
       (state, { payload }) => {
       state.loading = false
-      state.tuits = state.tuits .filter(t => t._id !== payload)
+      state.tuits = state.tuits.filter(t => t._id !== payload)
     },
 
     [findTuitsThunk.pending]:
