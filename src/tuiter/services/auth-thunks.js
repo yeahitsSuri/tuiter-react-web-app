@@ -25,7 +25,7 @@ export const updateUserThunk = createAsyncThunk(
       await authService.updateUser(userId, user);
       return user;
     }
-  );
+);
 
 
 export const registerThunk = createAsyncThunk(
