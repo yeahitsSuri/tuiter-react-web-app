@@ -1,6 +1,6 @@
 import axios from "axios";
 const SERVER_API_URL = process.env.REACT_APP_SERVER_API_URL;
-const USERS_URL = `${SERVER_API_URL}/api/users`;
+const USERS_URL = `${SERVER_API_URL}/users`;
 
 
 const api = axios.create({ withCredentials: true });
@@ -22,8 +22,8 @@ export const profile = async () => {
     return response.data;
 };
 
-export const updateUser = async (user) => {
-    const response = await api.put(`${USERS_URL}`, user);
+export const updateUser = async (userId, user) => {
+    const response = await api.put(`${USERS_URL}/${userId}`, user);
     return response.data;
 };
 

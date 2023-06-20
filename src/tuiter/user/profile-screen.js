@@ -1,88 +1,70 @@
-import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { profileThunk, logoutThunk, updateUserThunk }
-  from "../services/auth-thunks";
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {useNavigate} from "react-router";
+import {logoutThunk, profileThunk, updateUserThunk} from "../services/auth-thunks";
 
 function ProfileScreen() {
- const { currentUser } = useSelector((state) => state.user);
- const [profile, setProfile] = useState(currentUser);
- //const [profile, setProfile] = useState({
-  //firstName: currentUser?.firstName || "",
-  //lastName: currentUser?.lastName || ""
-  //});
- const dispatch = useDispatch();
- const navigate = useNavigate();
- const save = async () => {
-  await dispatch(updateUserThunk(profile));
-};
- 
- useEffect(() => {
-  setProfile(currentUser);
-}, [currentUser]);
+    const loggedInUser = localStorage.getItem("user");
+    let parsedLoggedInUser = JSON.parse(loggedInUser);
+    const [profile, setProfile] = useState(parsedLoggedInUser || {firstName: "", lastName: ""});
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
- useEffect(() => {
-  async function fetchData() {
-      const {payload} = await dispatch(profileThunk());
-      console.log(payload);
-      setProfile(payload);
-  }
-  fetchData();
-},[]);
+    const save = async () => {
+        await dispatch(updateUserThunk(profile));
+        localStorage.setItem("user", JSON.stringify(profile));
+    };
 
- return ( 
-  <div>
-    <h1>Profile Screen</h1><br/>
-    {profile ? (
-        <div className="container">
-            <div className="row mt-3">
-                <div className="col-3">
-                    <label>First Name</label>
-                </div>
-                <div className="col">
-                    <input className="form-control" type="text" value={profile.firstName} onChange={(event) => {
-                        const newProfile = {
-                            ...profile, firstName: event.target.value,
-                        };
-                        setProfile(newProfile);
-                    }}/>
-                </div>
-            </div>
-            <div className="row mt-3">
-                <div className="col-3">
-                    <label>Last Name</label>
-                </div>
-                <div className="col">
-                    <input className="form-control" type="text" value={profile.lastName} onChange={(event) => {
-                        const newProfile = {
-                            ...profile, lastName: event.target.value,
-                        };
-                        setProfile(newProfile);
-                    }}/>
-                </div>
-            </div>
-            <div className="row mt-3">
-            <div className="col">
-                <button className="btn btn-danger" onClick={() => {
-                    dispatch(logoutThunk());
-                    navigate("/tuiter/login");
-                }}>                   
-                    Logout
-                </button>
-            </div>
-            </div>
-            <div className="row mt-3">
-                <div className="col">
-                    <button className="btn btn-primary" onClick={save}>Save</button>
-                </div>
-            </div>    
-        </div>
-        ) :
+    useEffect(() => {
+        async function fetchData() {
+            await dispatch(profileThunk());
+        }
+        fetchData();
+    }, [dispatch]);
+
+    useEffect(() => {
+        setProfile(profile);
+    }, [profile]);
+
+    return (
         <div>
-            <h3>You have not Login or Register.</h3>
+            <h1>Profile</h1>
+            {profile && (
+                <div>
+                    <div className={"mt-2"}>
+                        <label>First Name</label>
+                        <input className={"form-control"} type={"text"} value={profile.firstName}
+                               onChange={(event) => {
+                                   const newProfile = {
+                                       ...profile, firstName: event.target.value,
+                                   }
+                                   setProfile(newProfile);
+                               }}/>
+                    </div>
+
+                    <div className={"mt-2"}>
+                        <label>Last Name</label>
+                        <input className={"form-control"} type={"text"} value={profile.lastName}
+                               onChange={(event) => {
+                                   const newProfile = {
+                                       ...profile, lastName: event.target.value,
+                                   };
+                                   setProfile(newProfile);
+                               }}/>
+                    </div>
+
+                    <button className={"btn btn-danger mt-2"} onClick={() => {
+                        dispatch(logoutThunk());
+                        navigate("/tuiter/login");
+                    }}>Logout
+                    </button>
+                    <button className="btn btn-primary mt-2" style={{ marginLeft: '10px' } } onClick={save}>Save
+                    </button>
+                </div>
+            )}
         </div>
-    }       
-  </div> 
-  );  
-};
+    );
+
+}
+
 export default ProfileScreen;
