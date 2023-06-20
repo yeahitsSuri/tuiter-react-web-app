@@ -7,14 +7,13 @@ import { profileThunk, logoutThunk, updateUserThunk }
 function ProfileScreen() {
  const { currentUser } = useSelector((state) => state.user);
  const [profile, setProfile] = useState(currentUser);
- //const [profile, setProfile] = useState({
-  //firstName: currentUser?.firstName || "",
-  //lastName: currentUser?.lastName || ""
-  //});
+
  const dispatch = useDispatch();
  const navigate = useNavigate();
+ 
  const save = async () => {
-  await dispatch(updateUserThunk(profile));
+    console.log("saving profile....");
+    await dispatch(updateUserThunk({userId: currentUser._id, user: profile}));
 };
  
  useEffect(() => {
@@ -28,7 +27,7 @@ function ProfileScreen() {
       setProfile(payload);
   }
   fetchData();
-},[]);
+},[dispatch]);
 
  return ( 
   <div>
