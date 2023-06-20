@@ -10,7 +10,7 @@ import { useLocation } from "react-router";
 const TuitItem = ({
   tuit = {
     "topic": "Space",
-    "userName": "SpaceX",
+    "username": "SpaceX",
     "title": "Falcon 9’s first stage Landing",
     "time": "2h",
     "image": "spacex.png",
@@ -45,7 +45,7 @@ const TuitItem = ({
         <div className="col-10">
           <div className="row">
             <div className="col-11">
-              <span className="fw-bolder">{tuit.userName}</span>{" "}
+              <span className="fw-bolder">{tuit.username}</span>{" "}
               <i className="fas fa-check-circle wd-blue"></i> {tuit.handle} •{" "}
               {tuit.time}
             </div>
