@@ -12,7 +12,6 @@ function ProfileScreen() {
  const navigate = useNavigate();
  
  const save = async () => {
-    console.log("saving profile....");
     await dispatch(updateUserThunk({userId: currentUser._id, user: profile}));
 };
  
